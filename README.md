@@ -27,8 +27,7 @@ iOS 添加到主屏幕/ iOS Add To Desktop
 
 针对方案二，对功能进行了封装，仅需调用3行代码，即可实现动态添加快捷方式到桌面。
 
-
-![DLAddToDesktopLib.gif](http://upload-images.jianshu.io/upload_images/1790518-fb43eb8c8afb94ad.gif?imageMogr2/auto-orient/strip)
+<img id="img" width="100" height="100" src="http://upload-images.jianshu.io/upload_images/1790518-fb43eb8c8afb94ad.gif?imageMogr2/auto-orient/strip">
 
 ###功能封装
 >用到的一些类库
