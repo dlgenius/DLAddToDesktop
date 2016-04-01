@@ -22,7 +22,8 @@ iOS 添加快捷方式到主屏幕/ iOS Add To Desktop
 
 ##功能封装及技术实现
 方案一比较简单，就不再多说了。
-本文主要针对方案二，其中用到的一些知识包括HTML、cocoaHttpServer、Data URI Scheme等，关于Data URI Scheme相关知识，可以参考我的另一篇文章。
+本文主要针对方案二，其中用到的一些知识包括HTML、cocoaHttpServer、Data URI Scheme等，关于Data URI Scheme相关知识，可以参考我的另一篇文章
+http://www.jianshu.com/p/ea49397fcd13
 >封装方法
 
 针对方案二，对功能进行了封装，仅需调用3行代码，即可实现动态添加快捷方式到桌面。
