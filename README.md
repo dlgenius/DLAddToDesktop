@@ -1,5 +1,5 @@
 # DLAddToDesktop
-iOS 添加到主屏幕/ iOS Add To Desktop
+iOS 添加快捷方式到桌面/ iOS Add To Desktop
 ##基本实现思想
 
 利用Safari自带的添加到主屏幕功能，有两种实现方案，
