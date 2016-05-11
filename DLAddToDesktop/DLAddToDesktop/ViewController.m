@@ -32,7 +32,7 @@
     NSString *imageString = [[UIImage imageNamed:@"webIcon"] dataURISchemeImage];
     [handler addToDesktopWithDataURISchemeImage:imageString
                                           title:@"Donglei"
-                                      urlScheme:@"weixin://"
+                                      urlScheme:@"DLAddToDesktop://"
                                  appDownloadUrl:@"https://appsto.re/cn/S8gTy.i"];
 
 }
@@ -42,7 +42,7 @@
     NSString *imageString = [[UIImage imageNamed:@"webIcon1"] dataURISchemeImage];
     [handler addToDesktopWithDataURISchemeImage:imageString
                                           title:@"Donglei"
-                                      urlScheme:@"weixin://"
+                                      urlScheme:@"DLAddToDesktop://"
                                  appDownloadUrl:@"https://appsto.re/cn/S8gTy.i"];
 }
 
