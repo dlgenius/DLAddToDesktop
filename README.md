@@ -1,17 +1,9 @@
 ##20160511更新内容，
 增加了判断用户是否安装有目标APP的能力，如用户手机装有目标APP，点击桌面快捷图标，会直接跳转到应用，如用户未安装目标APP则会跳转到目标APP的下载页。
-- (void)addToDesktopWithDataURISchemeImage:(NSString *)dataURISchemeImage title:(NSString *)title urlScheme:(NSString *)urlScheme;方法增加appDownloadUrl参数，改为：
-/**
- *	@brief	通过Safari添加快捷方式到桌面,如未安装应用会跳转到应用下载地址，如安装应用，会直接打开应用
- *
- *	@param 	dataURISchemeImage   data URI scheme
- *	@param 	title                快捷方式桌面名称
- *	@param 	urlScheme            ios APP的URL Schemes
- *	@param 	appDownloadUrl       应用下载地址
+- (void)addToDesktopWithDataURISchemeImage:(NSString *)dataURISchemeImage title:(NSString *)title urlScheme:(NSString *)urlScheme;
 
- *
- *	@return	void
- */
+方法增加appDownloadUrl参数，改为：
+
 - (void)addToDesktopWithDataURISchemeImage:(NSString *)dataURISchemeImage title:(NSString *)title urlScheme:(NSString *)urlScheme appDownloadUrl:(NSString *)appDownloadUrl;
 
 # DLAddToDesktop
