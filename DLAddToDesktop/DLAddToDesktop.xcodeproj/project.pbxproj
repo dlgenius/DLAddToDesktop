@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F2A84D01CE2DAF000890AA9 /* content1.html in Resources */ = {isa = PBXBuildFile; fileRef = 4F2A84CF1CE2DAF000890AA9 /* content1.html */; };
 		4FD4EA961CAE3A3B00F1FD2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD4EA951CAE3A3B00F1FD2E /* main.m */; };
 		4FD4EA991CAE3A3B00F1FD2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD4EA981CAE3A3B00F1FD2E /* AppDelegate.m */; };
 		4FD4EA9C1CAE3A3B00F1FD2E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD4EA9B1CAE3A3B00F1FD2E /* ViewController.m */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F2A84CF1CE2DAF000890AA9 /* content1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = content1.html; sourceTree = "<group>"; };
 		4FD4EA911CAE3A3B00F1FD2E /* DLAddToDesktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DLAddToDesktop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FD4EA951CAE3A3B00F1FD2E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4FD4EA971CAE3A3B00F1FD2E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 		4FD4EAEC1CAE447B00F1FD2E /* HTMLTemplet */ = {
 			isa = PBXGroup;
 			children = (
+				4F2A84CF1CE2DAF000890AA9 /* content1.html */,
 				4FD4EAED1CAE447B00F1FD2E /* content.html */,
 				4FD4EAEE1CAE447B00F1FD2E /* index.html */,
 			);
@@ -307,6 +310,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F2A84D01CE2DAF000890AA9 /* content1.html in Resources */,
 				4FD4EAF41CAE447B00F1FD2E /* index.html in Resources */,
 				4FD4EAA41CAE3A3B00F1FD2E /* LaunchScreen.storyboard in Resources */,
 				4FD4EAA11CAE3A3B00F1FD2E /* Assets.xcassets in Resources */,

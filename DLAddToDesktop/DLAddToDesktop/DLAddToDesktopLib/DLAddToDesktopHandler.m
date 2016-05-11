@@ -23,6 +23,7 @@ static const int ddLogLevel = LOG_LEVEL_WARN;
 #define DLCSImageData               @"DLCSImageData"
 #define DLCSAPPScheme               @"DLCSAPPScheme"
 #define DLCSDataURISchemeContent    @"DLCSDataURISchemeContent"
+#define DLAPPDownloadUrl            @"DLAPPDownloadUrl"
 
 
 @interface DLAddToDesktopHandler()
@@ -48,19 +49,21 @@ static const int ddLogLevel = LOG_LEVEL_WARN;
     return _sharedInstance;
 }
 
-- (void)addToDesktopWithDataURISchemeImage:(NSString *)dataURISchemeImage title:(NSString *)title urlScheme:(NSString *)urlScheme{
+- (void)addToDesktopWithDataURISchemeImage:(NSString *)dataURISchemeImage title:(NSString *)title urlScheme:(NSString *)urlScheme appDownloadUrl:(NSString *)appDownloadUrl{
 
     [self addToDesktopWithDataURISchemeImage:dataURISchemeImage
                                          title:title
                                      urlScheme:urlScheme
+                                appDownloadUrl:appDownloadUrl
                                      localPort:1077];
 }
 
-- (void)addToDesktopWithDataURISchemeImage:(NSString *)dataURISchemeImage title:(NSString *)title urlScheme:(NSString *)urlScheme localPort:(int)localPort{
+- (void)addToDesktopWithDataURISchemeImage:(NSString *)dataURISchemeImage title:(NSString *)title urlScheme:(NSString *)urlScheme  appDownloadUrl:(NSString *)appDownloadUrl localPort:(int)localPort{
     
     [self configHttpServerWithPort:localPort];
     
-    NSString *contentHtmlString = [self contentHtmlWithBase64Image:dataURISchemeImage title:title appScheme:urlScheme];
+    NSString *contentHtmlString = [self contentHtmlWithBase64Image:dataURISchemeImage title:title appScheme:urlScheme appDownloadUrl:appDownloadUrl];
+    
     contentHtmlString = [DLBase64 encodeBase64String:contentHtmlString];
     NSString *DataURIString = [NSString stringWithFormat:@"0;data:text/html;charset=utf-8;base64,%@",contentHtmlString];
     
@@ -116,13 +119,15 @@ static const int ddLogLevel = LOG_LEVEL_WARN;
 
 #pragma mark - HTMLMethod
 
--(NSString *)contentHtmlWithBase64Image:(NSString *)base64ImageString title:(NSString *)title appScheme:(NSString *)scheme{
+-(NSString *)contentHtmlWithBase64Image:(NSString *)base64ImageString title:(NSString *)title appScheme:(NSString *)scheme appDownloadUrl:(NSString *)appDownloadUrl{
+    
     NSString *contentHtmlPath = [self getcontentHTMLTempletPath];
     NSString *contentHtmlString = [NSString stringWithContentsOfFile:contentHtmlPath encoding:NSUTF8StringEncoding error:nil];
     
     contentHtmlString = [contentHtmlString stringByReplacingOccurrencesOfString:DLCSImageData withString:base64ImageString];
     contentHtmlString = [contentHtmlString stringByReplacingOccurrencesOfString:DLCSTitle withString:title];
     contentHtmlString = [contentHtmlString stringByReplacingOccurrencesOfString:DLCSAPPScheme withString:scheme];
+    contentHtmlString = [contentHtmlString stringByReplacingOccurrencesOfString:DLAPPDownloadUrl withString:appDownloadUrl];
    
     return contentHtmlString;
 

@@ -31,16 +31,19 @@
    DLAddToDesktopHandler *handler = [DLAddToDesktopHandler sharedInsance];
     NSString *imageString = [[UIImage imageNamed:@"webIcon"] dataURISchemeImage];
     [handler addToDesktopWithDataURISchemeImage:imageString
-                                            title:@"Donglei"
-                                        urlScheme:@"DLAddToDesktop://"];
+                                          title:@"Donglei"
+                                      urlScheme:@"weixin://"
+                                 appDownloadUrl:@"https://appsto.re/cn/S8gTy.i"];
+
 }
 - (IBAction)addAnotherOne:(id)sender {
     
     DLAddToDesktopHandler *handler = [DLAddToDesktopHandler sharedInsance];
     NSString *imageString = [[UIImage imageNamed:@"webIcon1"] dataURISchemeImage];
     [handler addToDesktopWithDataURISchemeImage:imageString
-                                            title:@"Donglei"
-                                        urlScheme:@"DLAddToDesktop://"];
+                                          title:@"Donglei"
+                                      urlScheme:@"weixin://"
+                                 appDownloadUrl:@"https://appsto.re/cn/S8gTy.i"];
 }
 
 @end
