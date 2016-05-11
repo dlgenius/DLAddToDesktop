@@ -1,3 +1,6 @@
+#20160511更新内容，
+增加了判断用户是否安装有目标APP的能力，如用户手机装有目标APP，点击桌面快捷图标，会直接跳转到应用，如用户未安装目标APP则会跳转到目标APP的下载页。
+
 # DLAddToDesktop
 iOS 添加快捷方式到主屏幕/ iOS Add To Desktop
 ##基本实现思想
@@ -45,14 +48,15 @@ http://www.jianshu.com/p/ea49397fcd13
 
 ![lib.png](http://upload-images.jianshu.io/upload_images/1790518-9371454439ce8c25.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-3.在需要添加到主页面的按钮事件中加入如下代码
+3.在需要添加到主页面的按钮事件中加入如下代码，一下示例代码APP的下载地址以微信的地址为例，集成到自己的APP时，需替换urlScheme与appDownloadUrl参数为自己需要的参数
 
 ```
  DLAddToDesktopHandler *handler = [DLAddToDesktopHandler sharedInsance];
     NSString *imageString = [[UIImage imageNamed:@"webIcon"] dataURISchemeImage];
     [handler addToDesktopWithDataURISchemeImage:imageString
                                             title:@"Donglei"
-                                        urlScheme:@"DLAddToDesktop://"];
+                                        urlScheme:@"DLAddToDesktop://"
+                                   appDownloadUrl:@"https://appsto.re/cn/S8gTy.i"];
 ```
 
 4.别忘记设置项目的URL Types
@@ -73,15 +77,16 @@ http://www.jianshu.com/p/ea49397fcd13
 +(DLCreateShortcutHandler *)sharedInsance;
 
 /**
- *	@brief	通过Safari添加快捷方式到桌面
+ *	@brief	通过Safari添加快捷方式到桌面,如未安装应用会跳转到应用下载地址，如安装应用，会直接打开应用
  *
  *	@param 	dataURISchemeImage   data URI scheme
  *	@param 	title                快捷方式桌面名称
- *	@param 	urlScheme            ios APP的URL Scheme
+ *	@param 	urlScheme            ios APP的URL Schemes
+ *	@param 	appDownloadUrl       应用下载地址
  *
  *	@return	void
  */
-- (void)addToDesktopWithDataURISchemeImage:(NSString *)dataURISchemeImage title:(NSString *)title urlScheme:(NSString *)urlScheme;
+- (void)addToDesktopWithDataURISchemeImage:(NSString *)dataURISchemeImage title:(NSString *)title urlScheme:(NSString *)urlScheme appDownloadUrl:(NSString *)appDownloadUrl;
 
 ```
 
