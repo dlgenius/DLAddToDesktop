@@ -1,3 +1,9 @@
+##201806更新内容，
+解决了iOS11兼容性问题，包括：
+1、打开的网页为本地地址，本地服务器停止响应问题。
+2、手机本地已经安装了目标APP，但点击快捷图标时，跳转到目标APP后依然会跳转APPStore下载地址的问题。
+感谢大家的支持，之前由于特殊原因更新比较慢，后续兼容新iOS版本发布会及时测试并更新兼容性相关问题。
+
 ##20160511更新内容，
 增加了判断用户是否安装有目标APP的能力，如用户手机装有目标APP，点击桌面快捷图标，会直接跳转到应用，如用户未安装目标APP则会跳转到目标APP的下载页。
 - (void)addToDesktopWithDataURISchemeImage:(NSString *)dataURISchemeImage title:(NSString *)title urlScheme:(NSString *)urlScheme;
