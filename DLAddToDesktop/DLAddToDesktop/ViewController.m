@@ -32,8 +32,8 @@
     NSString *imageString = [[UIImage imageNamed:@"webIcon"] dataURISchemeImage];
     [handler addToDesktopWithDataURISchemeImage:imageString
                                           title:@"Donglei"
-                                      urlScheme:@"DLAddToDesktop://"
-                                 appDownloadUrl:@"https://appsto.re/cn/S8gTy.i"];
+                                      urlScheme:@"DLAddToDesktop://para=a"
+                                 appDownloadUrl:@"https://www.baidu.com"];
 
 }
 - (IBAction)addAnotherOne:(id)sender {

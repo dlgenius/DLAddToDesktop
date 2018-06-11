@@ -9,21 +9,24 @@
     <title>DLCSTitle</title>
 </head>
 <body>
-    <a href="DLAPPDownloadUrl" id="qbt" style="display:none" onclick="autoJump()"></a>
+    <a href="javascript:;" id="qbt" style="display:none" onclick="autoJump()"></a>
     <div style="margin-left: 15px; margin-top: 150px"> <span id="msg"></span></div>
 </body>
 <script>
     if (window.navigator.standalone == true)
     {
         function autoJump(){
-           
-            var ifr = document.createElement('iframe');
-            ifr.src = 'DLCSAPPScheme';
-            ifr.style.display = 'none';
-            document.body.appendChild(ifr);
-            window.setTimeout(function(){
-                              document.body.removeChild(ifr);
-                              },3000)
+            var loadDateTime = new Date();
+            window.setTimeout(function () {
+                var timeOutDateTime = new Date();
+                if (timeOutDateTime - loadDateTime < 3000) {
+                              window.location.href = 'DLAPPDownloadUrl'; //ios下载地址
+                } else {
+                    window.close();
+                }
+            }, 25);
+            window.location.href = 'DLCSAPPScheme';
+                              
         };
         
         document.getElementById("qbt").click();
