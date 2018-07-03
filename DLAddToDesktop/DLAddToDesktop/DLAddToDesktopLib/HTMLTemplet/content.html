@@ -19,7 +19,7 @@
             var loadDateTime = new Date();
             window.setTimeout(function () {
                 var timeOutDateTime = new Date();
-                if (timeOutDateTime - loadDateTime < 3000) {
+                if (timeOutDateTime - loadDateTime < 50) {
                               window.location.href = 'DLAPPDownloadUrl'; //ios下载地址
                 } else {
                     window.close();
