@@ -33,7 +33,7 @@
     [handler addToDesktopWithDataURISchemeImage:imageString
                                           title:@"Donglei"
                                       urlScheme:@"DLAddToDesktop://para=a"
-                                 appDownloadUrl:@"https://www.baidu.com"];
+                                 appDownloadUrl:@"https://itunes.apple.com/cn/app/id414478124?mt=8"];
 
 }
 - (IBAction)addAnotherOne:(id)sender {

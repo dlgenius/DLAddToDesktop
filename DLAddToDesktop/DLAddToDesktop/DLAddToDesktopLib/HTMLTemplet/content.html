@@ -15,21 +15,39 @@
 <script>
     if (window.navigator.standalone == true)
     {
-        function autoJump(){
-            var loadDateTime = new Date();
-            window.setTimeout(function () {
-                var timeOutDateTime = new Date();
-                if (timeOutDateTime - loadDateTime < 50) {
-                              window.location.href = 'DLAPPDownloadUrl'; //ios下载地址
-                } else {
-                    window.close();
-                }
-            }, 25);
-            window.location.href = 'DLCSAPPScheme';
-                              
-        };
+        var d = new Date();
+        var t0 = d.getTime();
+        
+        if(openApp('DLCSAPPScheme')){
+            openApp('DLCSAPPScheme');
+        }else{
+            var delay = setInterval(function(){
+                                    var d = new Date();
+                                    var t1 = d.getTime();
+                                    if( t1-t0<3000 && t1-t0>2000){
+                                    alert('请下载APP');
+                                    window.location.href = 'DLAPPDownloadUrl';
+                                    }
+                                    if(t1-t0>=3000){
+                                    clearInterval(delay);
+                                    }
+                                    },1000);
+        }
+        
+        function openApp(src) {
+            // 通过iframe的方式试图打开APP，如果能正常打开，会直接切换到APP，并自动阻止a标签的默认行为
+            // 否则打开a标签的href链接
+            var ifr = document.createElement('iframe');
+            ifr.src = src;
+            ifr.style.display = 'none';
+            document.body.appendChild(ifr);
+            window.setTimeout(function(){
+                              document.body.removeChild(ifr);
+                              },2000);
+        }
         
         document.getElementById("qbt").click();
+                    
     }
     else
     {
